@@ -26,3 +26,24 @@ int main(void) {
     }
     return 0;
 }
+
+// bekkai
+// int main(void) {
+//     int a,b,c;
+//     int tmp;
+
+//     for (a=0; a<10; a++) {
+//         for (b=0; b<10; b++) {
+//             for (c=0; c<10; c++) {
+//                 tmp = (a+c) + (a+b)/10;
+//                 if (a == b || b == c || c == a) continue;
+//                 if ((a+b)%10 == a && tmp%10 == b && tmp/10 == a) {
+//                     printf(" %d%d\n", a, b);
+//                     printf("+%d%d\n", c, a);
+//                     printf("%d%d%d\n", a, b, a);
+//                 }
+//             }
+//         }
+//     }
+//    return 0;
+// }
