@@ -12,6 +12,7 @@ void swap(int i, int j, int array[]) {
 // (2)
 int max_position(int n, int array[]) {
     count++;
+    printf("%d, ", count);
     if (n > 1) {
         int p = max_position(n - 1, array);
         if (array[n - 1] < array[p]) {
@@ -40,6 +41,8 @@ int max_position2(int n, int array[]) {
 void s(int n, int array[]) {
     if (n > 1) {
         swap(n - 1, max_position(n, array), array);
+        printf("\n");
+        for (int i=0; i<n; i++) printf("%d ", array[i]); printf("\n");
         s(n - 1, array);
     }
 }
@@ -77,15 +80,15 @@ int main(void) {
     printf("B=%d\n", a10[9]);
     printf("C=%d\n", count);
 
-    // (5)
-    r(10, a10_2);
-    printf("D=%d\n", a10_2[3]);
-    printf("E=%d\n", a10_2[9]);
+    // // (5)
+    // r(10, a10_2);
+    // printf("D=%d\n", a10_2[3]);
+    // printf("E=%d\n", a10_2[9]);
 
-    // (6)
-    count = 0;
-    s2(10, a10_3);
-    printf("C=%d\n", count);
+    // // (6)
+    // count = 0;
+    // s2(10, a10_3);
+    // printf("C=%d\n", count);
 
     return 0;
 }
