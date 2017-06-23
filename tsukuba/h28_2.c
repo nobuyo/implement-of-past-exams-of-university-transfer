@@ -35,10 +35,8 @@ int is_reachable1(int s, int g) {
         return 0;
     visited[s] = 1;
     for (i = 0; i < N; i++) {
-        if (a[s][i]) {
-            tmp = is_reachable1(i, g);
-            printf("is_reachable1(%d, %d) = %d, s = %d\n", i, g, tmp, s);
-        }
+        if (a[s][g]) return 1;
+        if (a[s][i]) return is_reachable1(i, g);
     }
     return 0;
 }
@@ -85,6 +83,12 @@ int dijkstra(int s, int g) {
 }
 
 int main(void) {
-    printf("%d\n",is_reachable(0, 2));
-    printf("%d\n",dijkstra(0, 2));
+    int i, j;
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            printf("(%d, %d):\n", i, j);
+            printf("is_reachable : %d, ", is_reachable(i, j));
+            printf("dijkstra : %d\n", dijkstra(i, j));
+        }
+    }
 }
