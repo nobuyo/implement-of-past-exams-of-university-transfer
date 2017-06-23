@@ -10,6 +10,14 @@ int a[N][N] = {
     {0,0,0,1,0}
 };
 
+// int a[N][N] = {
+//     {0,1,1,0,0},
+//     {1,0,0,0,0},
+//     {0,0,0,0,0},
+//     {0,0,0,0,0},
+//     {0,0,0,1,0}
+// };
+
 int maxranked() {
     int i, j, rank, max = 0, node = -1;
     for (i = 0; i < N; i++) {
@@ -29,14 +37,27 @@ int maxranked() {
 int visited[N];
 int is_reachable1(int s, int g) {
     int i, tmp;
-    if (s == g)
+    if (s == g) {
+        // printf("return 1 when(%d,%d)\n", s,g);
         return 1;
-    if (visited[s])
+    }
+    if (visited[s]) {
+        // printf("return 0 when (%d,%d)\n", s,g);
         return 0;
+    }
     visited[s] = 1;
     for (i = 0; i < N; i++) {
+<<<<<<< Updated upstream
         if (a[s][g]) return 1;
         if (a[s][i]) return is_reachable1(i, g);
+=======
+        if (a[s][i]) {
+            printf("is_reachable1(%d, %d) = %d, s = %d\n", i, g, is_reachable1(i, g), s);
+            // tmp = is_reachable1(i,g);
+            // return tmp;
+        }
+        printf("i = %d\n", i);
+>>>>>>> Stashed changes
     }
     return 0;
 }
