@@ -47,17 +47,8 @@ int is_reachable1(int s, int g) {
     }
     visited[s] = 1;
     for (i = 0; i < N; i++) {
-<<<<<<< Updated upstream
         if (a[s][g]) return 1;
         if (a[s][i]) return is_reachable1(i, g);
-=======
-        if (a[s][i]) {
-            printf("is_reachable1(%d, %d) = %d, s = %d\n", i, g, is_reachable1(i, g), s);
-            // tmp = is_reachable1(i,g);
-            // return tmp;
-        }
-        printf("i = %d\n", i);
->>>>>>> Stashed changes
     }
     return 0;
 }
