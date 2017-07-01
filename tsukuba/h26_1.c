@@ -60,13 +60,14 @@ void prime2(unsigned int max) {
     unsigned int words = ceil((double) (max + 1) / 32);
     unsigned int *flag =
         (unsigned int *) malloc(sizeof(unsigned int) * words);
+
     // initialization of all flags
     for (i = 0; i < words; i++) {
         flag[i] = 0xFFFFFFFF;
     }
 
     if (max == 1000) {
-        printf("prime2(%d): assigned %lubyte.\n", max, sizeof(flag));
+        printf("prime2(%d): allocated %lubyte. words length is %d.\n", max, sizeof(unsigned int) * words, words);
     }
 
     // sieving (FURUI NI KAKERU)
